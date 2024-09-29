@@ -1,0 +1,23 @@
+ #Variable Assignment
+name = "John Lawrence V. Martinez"
+address = "Cayus, Pilar, Capiz"
+course = "Information Technology"
+
+#Printing of Results
+print(f"Name of Student: {name}")
+print(f"Address: {address}")
+print(f"Course: {course}")
+print("\n")
+
+#Age input
+age = int(input("Enter your Age:"))
+
+#Marks or process 
+if age >= 60:
+print("Senior Citizen kana!")  
+elif age >= 18:
+print("Pwedi ka maka boto!") 
+elif age > 0:
+print("Bata ka pa!")  
+else:
+print("Invalid Age")
