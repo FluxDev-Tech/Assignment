@@ -1,0 +1,54 @@
+# VAT rate
+VAT = 0.12
+
+#Details ko
+PROGRAMMER = "John Lawrence V. Martinez"
+ADDRESS = "Cayus, Pilar Capiz"
+COURSE = "BSIT 1A"
+
+#interface
+print("Program 1: CASH REGISTER")
+print(f"PROGRAMMER: {PROGRAMMER}")
+print(f"ADDRESS: {ADDRESS}")
+print(f"COURSE: {COURSE}")
+print("=========================")
+
+# Input types 
+item1 = input("\nEnter Item 1: ")
+amount1 = float(input("Enter Amount1: "))
+
+item2 = input("\nEnter Item 2: ")
+amount2 = float(input("Enter Amount2: "))
+
+item3 = input("\nEnter Item 3: ")
+amount3 = float(input("Enter Amount3: "))
+
+# Calculate subtotal
+subtotal = amount1 + amount2 + amount3
+
+vat_amount = subtotal * VAT
+
+total_with_vat = subtotal + vat_amount
+
+# interface sang calcu
+print(f"\nSubtotal: {subtotal:.2f}")
+print(f"VAT @ 12%: {vat_amount:.2f}")
+print(f"Total (including VAT): {total_with_vat:.2f}")
+
+# e enter Nadi ang amount tendered by the customer
+amount_tendered = float(input("\nEnter Amount Tendered: "))
+
+# Calculate change
+change = amount_tendered - total_with_vat
+
+#if,elif kag else
+if amount_tendered < total_with_vat:
+   remarks = "kulang imo kwarta balik ka lang bukas, bawal utang"
+elif total_with_vat:
+   remarks = "IMISS YOU, BALIK KANA!"
+else:   
+   remarks = "Balik ka bukas, Thank you!"
+   print(f"change: P {change:.2f}")
+   
+#Final remarks    
+print(f"Remarks: {remarks}")
