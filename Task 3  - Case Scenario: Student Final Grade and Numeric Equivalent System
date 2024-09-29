@@ -1,0 +1,95 @@
+#Details ko
+PROGRAMMER = "John Lawrence V. Martinez"
+print("Capiz State University")
+print("Grading System Calculation")
+print(f"PROGRAMMER: {PROGRAMMER}")
+print("=" * 35)
+def calculate_final_grade(prelim_grade, midterm_grade, final_exam_grade):
+  """Calculates the final grade of a student based on their exam scores.
+
+  Args:
+    prelim_grade: The student's prelim exam grade.
+    midterm_grade: The student's midterm exam grade.
+    final_exam_grade: The student's final exam grade.
+
+  Returns:
+    The student's final grade.
+  """
+  final_grade = (prelim_grade * 0.3) + (midterm_grade * 0.3) + (final_exam_grade * 0.4)
+  return final_grade
+  
+
+def get_numeric_equivalent(final_grade):
+  """Determines the numeric equivalent of the final grade.
+
+  Args:
+    final_grade: The student's final grade.
+
+  Returns:
+    The numeric equivalent of the final grade.
+    
+   """
+ 
+  if final_grade >= 90:
+    return 1.5
+  elif final_grade >= 85:
+    return 1.75
+  elif final_grade >= 80:
+    return 2.0
+  elif final_grade >= 75:
+    return 2.25
+  elif final_grade >= 70:
+    return 2.5
+  elif final_grade >= 65:
+    return 2.75
+  elif final_grade >= 60:
+    return 3.0
+  else:
+    return 5.0
+    
+def get_remarks(final_grade):
+  """Determines the remarks based on the final grade.
+
+  Args:
+    final_grade: The student's final grade.
+
+  Returns:
+    The remarks based on the final grade.
+  """
+  if final_grade >= 90:
+    return "Outstanding"
+  elif final_grade >= 80:
+    return "Very Good"
+  elif final_grade >= 70:
+    return "Good"
+  elif final_grade >= 60:
+    return "Needs Improvement"
+  else:
+    return "Failed"
+    
+def main():
+  """Main function to run the grading system."""
+  while True:
+    student_name = input("Enter Student's Name: ")
+    course_section = input("Enter Course-Section: ")
+    prelim_grade = float(input("Enter Prelim Exam Grade (0-100): "))
+    midterm_grade = float(input("Enter Midterm Exam Grade (0-100): "))
+    final_exam_grade = float(input("Enter Final Exam Grade (0-100): "))
+    print("=" * 35)
+
+    final_grade = calculate_final_grade(prelim_grade, midterm_grade, final_exam_grade)
+    numeric_equivalent = get_numeric_equivalent(final_grade)
+    remarks = get_remarks(final_grade)
+
+    print(f"Final Grade: {final_grade:.2f}")
+    print(f"Numeric Equivalent: {numeric_equivalent}")
+    print(f"Remarks: {remarks}")
+    print("=" * 35) 
+
+    calculate_another = input("Would you like to calculate another student's grade? (yes/no): ")
+    if calculate_another.lower() != "yes":
+      print("Thank you! Goodbye!")
+      break
+
+if _name_ == "_main_":
+  main()
