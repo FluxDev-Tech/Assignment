@@ -1,0 +1,41 @@
+#Details ko
+print("=" * 35)
+PROGRAMMER = "John Lawrence V. Martinez"
+print("Banayad Corp Payroll System")
+print("Weekly Payroll System")
+print(f"PROGRAMMER: {PROGRAMMER}")
+print("=" * 35)
+print("\n")  
+       
+while True:
+  employee_id = input('Enter Employee ID Number: ')
+  employee_name = input('Enter Employee Name: ')
+  department = input('Enter Department: ')
+  total_hours_worked = int(input('Enter Total Hours Worked: '))
+  rate_per_hour = float(input('Enter Rate per Hour: '))
+  sss_deduction = float(input('Enter SSS Deduction: '))
+  philhealth_deduction = float(input('Enter PhilHealth Deduction: '))
+
+  regular_pay = 40 * rate_per_hour
+  overtime_pay = (total_hours_worked - 40) * rate_per_hour * 1.5
+  gross_pay = regular_pay + overtime_pay
+  total_deductions = sss_deduction + philhealth_deduction
+  net_pay = gross_pay - total_deductions
+  
+  print("\n")
+  print(f'Employee Name: {employee_name}')
+  print(f'Employee ID: {employee_id}')
+  print(f'Department: {department}')
+  print("\n") 
+  
+  print(f'Regular Pay (40 hours): P {regular_pay:.2f}')
+  print(f'Overtime Pay ({total_hours_worked - 40:.1f} hours): P {overtime_pay:.2f}')
+  print(f'Gross Pay: P {gross_pay:.2f}')
+  print(f'Total Deductions (SSS + PhilHealth): P {total_deductions:.2f}')
+  print(f'Net Pay: P {net_pay:.2f}')
+  print("\n")
+  
+  another_employee = input('Would you like to enter another employee? (yes/no): ')
+  if another_employee.lower() != 'y':
+    break   
+ 
