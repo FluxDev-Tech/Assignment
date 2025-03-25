@@ -1,92 +1,128 @@
-# 1. Movie Ticket Pricing System
-def movie_ticket_price(age):
-  if age < 12:
-    return 100
-  elif 13 <= age <= 19:
-    return 150
-  elif 20 <= age <= 59:
-    return 200
-  else:
-    return 120
+1.
 
-# 2. Even or Odd
-def even_odd(number):
-  if number % 2 == 0:
-    return "Even"
-  else:
-    return "Odd"
+age = int(input("Enter your age: "))
 
-# 3. Sum of List
-def sum_of_list(numbers):
-  total = 0
-  for num in numbers:
-    total += num
-  return total
+if age < 12:
+    price = 100
+elif 13 <= age <= 19:
+    price = 150
+elif 20 <= age <= 59:
+    price = 200
+else:
+    price = 120
 
-# 4. Positive, Negative, or Zero
-def check_number(number):
-  if number > 0:
-    return "Positive"
-  elif number < 0:
-    return "Negative"
-  else:
-    return "Zero"
+print(f"Your movie ticket price is: {price}")
 
-# 5. Simple Grading System
-def grade(score):
-  if score >= 90:
-    return "A"
-  elif 80 <= score <= 89:
-    return "B"
-  elif 70 <= score <= 79:
-    return "C"
-  elif 60 <= score <= 69:
-    return "D"
-  else:
-    return "F"
 
-# 6. Largest of Three Numbers
-def largest_of_three(a, b, c):
-  if a >= b and a >= c:
-    return a
-  elif b >= a and b >= c:
-    return b
-  else:
-    return c
+2.
 
-# 7. Voting Eligibility
-def voting_eligibility(age):
-  if age >= 18:
-    return "Eligible to vote"
-  else:
-    return "Not eligible to vote"
+num = int(input("Enter a number: "))
 
-# 8. Basic ATM Withdrawal
-def atm_withdrawal(balance, withdrawal):
-  if balance >= withdrawal:
-    return balance - withdrawal
-  else:
-    return "Insufficient balance"
+if num % 2 == 0:
+    print("The number is even.")
+else:
+    print("The number is odd.")
 
-# 9. Login System
-def login(username, password):
-  if username == "admin" and password == "1234":
-    return "Access granted"
-  else:
-    return "Access denied"
+3.
 
-# 10. Rock, Paper, Scissors Game
+numbers = []  
+for i in range(5):
+    numbers.append(int(input("Enter a number: ")))  
+
+print("The sum of all numbers is:", sum(numbers))
+
+4.
+
+
+num = float(input("Enter a number: "))
+if num > 0:
+    print("The number is positive.")
+elif num < 0:
+    print("The number is negative.")
+else:
+    print("The number is zero.")
+
+5.
+
+
+score = int(input("Enter your score (0-100): "))
+
+if score >= 90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+elif score >= 70:
+    grade = "C"
+elif score >= 60:
+    grade = "D"
+else:
+    grade = "F"
+
+print(f"Your grade is: {grade}")
+
+6.
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+num3 = float(input("Enter third number: "))
+
+largest = max(num1, num2, num3)
+
+print("The largest number is:", largest)
+
+
+7.
+
+age = int(input("Enter your age: "))
+
+if age >= 18:
+    print("You are eligible to vote.")
+else:
+    print("You are not eligible to vote.")
+
+8.
+
+balance = float(input("Enter your account balance: "))
+
+withdrawal = float(input("Enter withdrawal amount: "))
+
+if withdrawal <= balance:
+    balance -= withdrawal
+    print(f"Withdrawal successful! Your new balance is: {balance:.2f}")
+else:
+    print("Error: Insufficient funds.")
+
+9.
+
+correct_username = "admin"
+correct_password = "1234"
+
+username = input("Enter username: ")
+password = input("Enter password: ")
+
+if username == correct_username and password == correct_password:
+    print("Access granted. Welcome!")
+else:
+    print("Access denied. Incorrect username or password.")
+
+
+10.
+
 import random
 
-def rock_paper_scissors(user_choice):
-  choices = ["rock", "paper", "scissors"]
-  computer_choice = random.choice(choices)
+choices = ["rock", "paper", "scissors"]
 
-  if user_choice == computer_choice:
-    return "Tie"
-  elif (user_choice == "rock" and computer_choice == "scissors") or \
-       (user_choice == "paper" and computer_choice == "rock") or \
-       (user_choice == "scissors" and computer_choice == "paper"):
-    return "You win!"
-  else:
-    return "Computer wins!"
+user_choice = input("Enter rock, paper, or scissors: ").lower()
+
+computer_choice = random.choice(choices)
+
+print(f"Computer chose: {computer_choice}")
+
+if user_choice == computer_choice:
+    print("It's a tie!")
+elif (user_choice == "rock" and computer_choice == "scissors") or \
+     (user_choice == "paper" and computer_choice == "rock") or \
+     (user_choice == "scissors" and computer_choice == "paper"):
+    print("You win!")
+else:
+    print("You lose!")
